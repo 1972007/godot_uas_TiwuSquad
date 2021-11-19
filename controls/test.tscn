@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://GameMusik/Josep.wav" type="AudioStream" id=1]
+[ext_resource path="res://GameMusik/linda.wav" type="AudioStream" id=2]
+[ext_resource path="res://GameMusik/saya.wav" type="AudioStream" id=3]
+[ext_resource path="res://GameMusik/lucky.wav" type="AudioStream" id=4]
+[ext_resource path="res://GameMusik/silvy.wav" type="AudioStream" id=5]
+[ext_resource path="res://GameMusik/ridwan.wav" type="AudioStream" id=6]
+[ext_resource path="res://black-minimalistic-music-piano-black-background-1680x1050-entertainment-music-hd-art-wallpaper-preview.jpg" type="Texture" id=7]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1022.0
+margin_bottom = 597.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="josep" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+
+[node name="linda" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+
+[node name="lucky" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+
+[node name="ridwan" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+
+[node name="nandi" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+
+[node name="silvy" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
