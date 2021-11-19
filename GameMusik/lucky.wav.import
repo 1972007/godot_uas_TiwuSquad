@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/lucky.wav-de51c1f09f7508f2ac367a57e4ab485e.sample"
+
+[deps]
+
+source_file="res://GameMusik/lucky.wav"
+dest_files=[ "res://.import/lucky.wav-de51c1f09f7508f2ac367a57e4ab485e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/saya.wav-04cb9e4bbe35acaa7e34650766706d9b.sample"
+
+[deps]
+
+source_file="res://GameMusik/saya.wav"
+dest_files=[ "res://.import/saya.wav-04cb9e4bbe35acaa7e34650766706d9b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
