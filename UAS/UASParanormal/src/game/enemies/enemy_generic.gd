@@ -24,3 +24,7 @@ func _physics_process(delta): #real short movement code. seems to work, nice :)
 		for i in path:
 			debug_path.append(to_local(i))
 		pathfinding.points = debug_path
+func stop():
+	SPEED=0
+func resume():
+	SPEED=80
