@@ -19,21 +19,117 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/github-integration/scripts/GistItem.gd"
 }, {
+"base": "Resource",
+"class": "InventoryData",
+"language": "GDScript",
+"path": "res://addons/inventory_editor/model/InventoryData.gd"
+}, {
+"base": "EditorProperty",
+"class": "InventoryInspectorEditorInventory",
+"language": "GDScript",
+"path": "res://addons/inventory_editor/InventoryInspectorPluginEditorInventory.gd"
+}, {
+"base": "EditorProperty",
+"class": "InventoryInspectorEditorItem",
+"language": "GDScript",
+"path": "res://addons/inventory_editor/InventoryInspectorPluginEditorItem.gd"
+}, {
+"base": "EditorProperty",
+"class": "InventoryInspectorEditorType",
+"language": "GDScript",
+"path": "res://addons/inventory_editor/InventoryInspectorPluginEditorType.gd"
+}, {
+"base": "Resource",
+"class": "InventoryInventories",
+"language": "GDScript",
+"path": "res://addons/inventory_editor/InventoryManagerInventories.gd"
+}, {
+"base": "Resource",
+"class": "InventoryInventory",
+"language": "GDScript",
+"path": "res://addons/inventory_editor/model/InventoryInventory.gd"
+}, {
+"base": "Resource",
+"class": "InventoryItem",
+"language": "GDScript",
+"path": "res://addons/inventory_editor/model/InventoryItem.gd"
+}, {
+"base": "Reference",
+"class": "InventoryManagerInventory",
+"language": "GDScript",
+"path": "res://inventory/InventoryManagerInventory.gd"
+}, {
+"base": "Reference",
+"class": "InventoryManagerItem",
+"language": "GDScript",
+"path": "res://inventory/InventoryManagerItem.gd"
+}, {
+"base": "InventoryItem",
+"class": "InventoryRecipe",
+"language": "GDScript",
+"path": "res://addons/inventory_editor/model/InventoryRecipe.gd"
+}, {
+"base": "Resource",
+"class": "InventoryType",
+"language": "GDScript",
+"path": "res://addons/inventory_editor/model/InventoryType.gd"
+}, {
+"base": "Control",
+"class": "InventoryUI",
+"language": "GDScript",
+"path": "res://addons/inventory_editor/ui/InventoryInventoryUI.gd"
+}, {
 "base": "HBoxContainer",
 "class": "InvitationItem",
 "language": "GDScript",
 "path": "res://addons/github-integration/scripts/InvitationItem.gd"
 }, {
+"base": "Node2D",
+"class": "Item2D",
+"language": "GDScript",
+"path": "res://addons/inventory_editor/InventoryItem2D.gd"
+}, {
+"base": "Spatial",
+"class": "Item3D",
+"language": "GDScript",
+"path": "res://addons/inventory_editor/InventoryItem3D.gd"
+}, {
+"base": "TextureRect",
+"class": "ItemUI",
+"language": "GDScript",
+"path": "res://addons/inventory_editor/ui/InventoryItemUI.gd"
+}, {
 "base": "PanelContainer",
 "class": "RepositoryItem",
 "language": "GDScript",
 "path": "res://addons/github-integration/scripts/RepositoryItem.gd"
+}, {
+"base": "Control",
+"class": "VirtualJoystick",
+"language": "GDScript",
+"path": "res://Virtual Joystick/joystick/virtual_joystick.gd"
 } ]
 _global_script_class_icons={
 "ContributorClass": "",
 "GistItem": "",
+"InventoryData": "",
+"InventoryInspectorEditorInventory": "",
+"InventoryInspectorEditorItem": "",
+"InventoryInspectorEditorType": "",
+"InventoryInventories": "",
+"InventoryInventory": "",
+"InventoryItem": "",
+"InventoryManagerInventory": "",
+"InventoryManagerItem": "",
+"InventoryRecipe": "",
+"InventoryType": "",
+"InventoryUI": "",
 "InvitationItem": "",
-"RepositoryItem": ""
+"Item2D": "",
+"Item3D": "",
+"ItemUI": "",
+"RepositoryItem": "",
+"VirtualJoystick": ""
 }
 
 [application]
@@ -122,8 +218,17 @@ draw_artifact={
  ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[inventory_editor]
+
+items_split_offset=195
+inventories_split_offset=154
+
 [rendering]
 
+quality/driver/driver_name="GLES2"
 2d/snapping/use_gpu_pixel_snap=true
-environment/default_clear_color=Color( 0.00784314, 0.00784314, 0.00784314, 1 )
 quality/2d/use_pixel_snap=true

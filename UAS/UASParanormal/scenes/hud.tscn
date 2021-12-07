@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/game/hud/stamina.gd" type="Script" id=1]
+[ext_resource path="res://src/game/hud/Artifact.gd" type="Script" id=2]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -8,9 +9,9 @@
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 20.0
-margin_top = -50.0
+margin_top = -557.0
 margin_right = 206.0
-margin_bottom = -20.0
+margin_bottom = -527.0
 step = 1.0
 value = 100.0
 rounded = true
@@ -30,6 +31,9 @@ margin_top = -7.0
 margin_right = 29.5
 margin_bottom = 7.0
 text = "STAMINA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 1.0
@@ -37,5 +41,53 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -226.0
-margin_top = -14.0
+margin_top = -590.0
+margin_bottom = -576.0
 text = "Press \"N\" to enter debugging mode"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Artifact" type="ProgressBar" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -590.0
+margin_right = 206.0
+margin_bottom = -560.0
+step = 1.0
+value = 100.0
+rounded = true
+percent_visible = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Artifact"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -29.5
+margin_top = -7.0
+margin_right = 29.5
+margin_bottom = 7.0
+text = "ARTIFACT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Artifact"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 99.0
+margin_top = -7.0
+margin_right = 159.0
+margin_bottom = 7.0
+text = "x0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
