@@ -1,11 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://textures/tilemap/tilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/hud.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/enemy_generic.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Virtual Joystick/joystick/virtual_joystick.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/map_test_1.gd" type="Script" id=6]
+[ext_resource path="res://icon.png" type="Texture" id=7]
+[ext_resource path="res://addons/inventory_example/inventories/clothes/InventoryClothesUI.tscn" type="PackedScene" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 34, 34 )
 
 [node name="World" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="Navigation" type="Navigation2D" parent="."]
 
@@ -18,10 +26,36 @@ tile_data = PoolIntArray( -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 411.079, 36.5649 )
+position = Vector2( 411.079, 31.5649 )
+joystickLeftPath = NodePath("../TouchControl/Virtual joystick")
 
 [node name="GenericEnemy" parent="." instance=ExtResource( 4 )]
 position = Vector2( 535.178, 373.406 )
 
 [node name="GenericEnemy2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1094.77, 653.845 )
+
+[node name="TouchControl" type="CanvasLayer" parent="."]
+
+[node name="Virtual joystick" parent="TouchControl" instance=ExtResource( 5 )]
+margin_left = 15.0
+margin_top = -202.0
+margin_right = 215.0
+margin_bottom = -2.0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="TouchControl"]
+position = Vector2( 875, 453 )
+normal = ExtResource( 7 )
+shape = SubResource( 1 )
+action = "Activate_Artifact"
+
+[node name="CanvasInventory" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasInventory" instance=ExtResource( 8 )]
+margin_left = 803.0
+margin_top = -7.0
+margin_right = 1028.0
+margin_bottom = 218.0
+
+[connection signal="pressed" from="TouchControl/TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]
+[connection signal="released" from="TouchControl/TouchScreenButton" to="." method="_on_TouchScreenButton_released"]
