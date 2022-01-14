@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://textures/artifak/kitab_pressed.png" type="Texture" id=3]
+[ext_resource path="res://textures/run_white.png" type="Texture" id=4]
+[ext_resource path="res://textures/pause.png" type="Texture" id=5]
+[ext_resource path="res://textures/run.png" type="Texture" id=6]
+[ext_resource path="res://textures/artifak/kitab_button.png" type="Texture" id=7]
+[ext_resource path="res://scenes/Inventory.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Virtual Joystick/joystick/virtual_joystick.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 34, 34 )
+
+[node name="TouchControl" type="CanvasLayer"]
+pause_mode = 2
+
+[node name="InventoryContainer" parent="." instance=ExtResource( 8 )]
+rect_scale = Vector2( 0.8, 0.8 )
+
+[node name="Virtual joystick" parent="." instance=ExtResource( 9 )]
+margin_left = 23.0
+margin_top = -360.0
+margin_right = 223.0
+margin_bottom = -160.0
+
+[node name="Artifact" type="TouchScreenButton" parent="."]
+position = Vector2( 726, 320 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 3 )
+shape = SubResource( 7 )
+action = "Activate_Artifact"
+
+[node name="Pause" type="TouchScreenButton" parent="."]
+pause_mode = 2
+position = Vector2( 761, 3 )
+scale = Vector2( 0.1, 0.1 )
+normal = ExtResource( 5 )
+
+[node name="Run" type="TouchScreenButton" parent="."]
+position = Vector2( 598, 367 )
+scale = Vector2( 0.1, 0.1 )
+normal = ExtResource( 4 )
+pressed = ExtResource( 6 )
