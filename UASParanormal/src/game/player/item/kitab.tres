@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://src/game/player/Item.gd" type="Script" id=1]
+[ext_resource path="res://textures/artifak/kitab.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Kitab"
+timer = 5
+dmg = 5
+max_durability = 100
+durability = 100
+texture = ExtResource( 2 )
+ready_to_use = true

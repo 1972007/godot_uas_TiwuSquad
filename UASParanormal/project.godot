@@ -19,10 +19,25 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/github-integration/scripts/GistItem.gd"
 }, {
+"base": "Control",
+"class": "HealthBar",
+"language": "GDScript",
+"path": "res://src/game/hud/HealthBar.gd"
+}, {
+"base": "Resource",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://src/game/player/Inventory.gd"
+}, {
 "base": "HBoxContainer",
 "class": "InvitationItem",
 "language": "GDScript",
 "path": "res://addons/github-integration/scripts/InvitationItem.gd"
+}, {
+"base": "Resource",
+"class": "Item",
+"language": "GDScript",
+"path": "res://src/game/player/Item.gd"
 }, {
 "base": "PanelContainer",
 "class": "RepositoryItem",
@@ -32,12 +47,15 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "VirtualJoystick",
 "language": "GDScript",
-"path": "res://Virtual Joystick/joystick/virtual_joystick.gd"
+"path": "res://VirtualJoystickGodotMain/joystick/virtual_joystick.gd"
 } ]
 _global_script_class_icons={
 "ContributorClass": "",
 "GistItem": "",
+"HealthBar": "",
+"Inventory": "",
 "InvitationItem": "",
+"Item": "",
 "RepositoryItem": "",
 "VirtualJoystick": ""
 }
@@ -45,7 +63,7 @@ _global_script_class_icons={
 [application]
 
 config/name="2D Horror Demo"
-run/main_scene="res://maps/map_test_1.tscn"
+run/main_scene="res://scenes/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -55,6 +73,7 @@ PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
 IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
 UserData="*res://addons/github-integration/scripts/user_data.gd"
 RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
+Global="*res://src/global.gd"
 
 [debug]
 
@@ -64,10 +83,18 @@ gdscript/warnings/return_value_discarded=false
 [display]
 
 window/dpi/allow_hidpi=true
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/github-integration/plugin.cfg" )
+
+[global]
+
+export=true
+"import etc"=true
+import=true
 
 [input]
 
@@ -131,6 +158,7 @@ draw_artifact={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+pointing/emulate_mouse_from_touch=false
 
 [inventory_editor]
 
@@ -141,5 +169,6 @@ inventories_split_offset=154
 
 quality/driver/driver_name="GLES2"
 2d/snapping/use_gpu_pixel_snap=true
+vram_compression/import_etc=true
 environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/2d/use_pixel_snap=true

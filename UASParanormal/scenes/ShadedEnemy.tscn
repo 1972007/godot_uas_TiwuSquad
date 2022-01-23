@@ -1,10 +1,134 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://src/game/hud/debug_showhide.gd" type="Script" id=1]
-[ext_resource path="res://textures/enemy_placeholder.png" type="Texture" id=2]
+[ext_resource path="res://scenes/HealthBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/game/enemies/ShadedEnemy.gd" type="Script" id=3]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0001.png" type="Texture" id=4]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0002.png" type="Texture" id=5]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0009.png" type="Texture" id=6]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0010.png" type="Texture" id=7]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0003.png" type="Texture" id=8]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0006.png" type="Texture" id=9]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0007.png" type="Texture" id=10]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0004.png" type="Texture" id=11]
+[ext_resource path="res://textures/monster kucing/diem/monter_kucing.0007.png" type="Texture" id=12]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0005.png" type="Texture" id=13]
+[ext_resource path="res://textures/monster kucing/diem/monter_kucing.0008.png" type="Texture" id=14]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0008.png" type="Texture" id=15]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0027.png" type="Texture" id=16]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0025.png" type="Texture" id=17]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0026.png" type="Texture" id=18]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0024.png" type="Texture" id=20]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0012.png" type="Texture" id=21]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0013.png" type="Texture" id=22]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0014.png" type="Texture" id=23]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0015.png" type="Texture" id=24]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0017.png" type="Texture" id=25]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0011.png" type="Texture" id=26]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0018.png" type="Texture" id=27]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0019.png" type="Texture" id=28]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0020.png" type="Texture" id=29]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0016.png" type="Texture" id=30]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0021.png" type="Texture" id=31]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0022.png" type="Texture" id=32]
+[ext_resource path="res://textures/monster kucing/jalan/monter_kucing.0023.png" type="Texture" id=33]
+[ext_resource path="res://textures/monster kucing/diem/monter_kucing.0011.png" type="Texture" id=34]
+[ext_resource path="res://textures/monster kucing/diem/monter_kucing.0010.png" type="Texture" id=35]
+[ext_resource path="res://textures/monster kucing/diem/monter_kucing.0005.png" type="Texture" id=36]
+[ext_resource path="res://textures/monster kucing/diem/monter_kucing.0003.png" type="Texture" id=39]
+[ext_resource path="res://textures/monster kucing/diem/monter_kucing.0004.png" type="Texture" id=40]
+[ext_resource path="res://textures/monster kucing/diem/monter_kucing.0006.png" type="Texture" id=43]
+[ext_resource path="res://textures/monster kucing/diem/monter_kucing.0001.png" type="Texture" id=44]
+[ext_resource path="res://textures/monster kucing/diem/monter_kucing.0009.png" type="Texture" id=45]
+[ext_resource path="res://textures/monster kucing/diem/monter_kucing.0002.png" type="Texture" id=46]
 
-[sub_resource type="Shader" id=2]
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 11, 20.5 )
+
+[sub_resource type="Animation" id=12]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "idle"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 44 ), ExtResource( 46 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 43 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 45 ), ExtResource( 35 ), ExtResource( 34 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "revive"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "stun"
+length = 0.1
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.01, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1, 0 ), Vector2( 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "walk"
+length = 0.52
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28, 0.3, 0.32, 0.34, 0.36, 0.38, 0.4, 0.42, 0.44, 0.46, 0.48, 0.5, 0.52 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 15 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 30 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 16 ) ]
+}
+
+[sub_resource type="Shader" id=9]
 code = "shader_type canvas_item;
 
 const float pi = 3.14156;
@@ -28,22 +152,13 @@ void fragment() {
 	COLOR = mix(texCol, texCol.a * vec4(backColR.r, backColG.g, backColB.b, 1.0), alpha);
 }"
 
-[sub_resource type="ShaderMaterial" id=3]
-shader = SubResource( 2 )
+[sub_resource type="ShaderMaterial" id=10]
+shader = SubResource( 9 )
 shader_param/dist = 16.0
-shader_param/alpha = 1.0
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 16, 16 )
+shader_param/alpha = 0.0
 
 [node name="ShadedEnemy" type="KinematicBody2D"]
 script = ExtResource( 3 )
-
-[node name="EnemyModel" type="Sprite" parent="."]
-material = SubResource( 3 )
-position = Vector2( 4.76837e-07, 4.76837e-07 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 2 )
 
 [node name="DebugPathfinding" type="Line2D" parent="."]
 width = 2.0
@@ -55,6 +170,38 @@ script = ExtResource( 1 )
 wait_time = 5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -6 )
 shape = SubResource( 4 )
 
+[node name="Stun" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_process_mode = 0
+method_call_mode = 1
+anims/death = SubResource( 12 )
+anims/idle = SubResource( 5 )
+anims/revive = SubResource( 13 )
+anims/stun = SubResource( 11 )
+anims/walk = SubResource( 6 )
+
+[node name="HealthBar" parent="." instance=ExtResource( 2 )]
+margin_left = -16.0
+margin_top = -38.0
+margin_right = -16.0
+margin_bottom = -38.0
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 10 )
+position = Vector2( 1, 0 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 43 )
+
+[node name="Hallowen0001" type="Sprite" parent="."]
+visible = false
+position = Vector2( 4, 1 )
+scale = Vector2( 0.08, 0.08 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

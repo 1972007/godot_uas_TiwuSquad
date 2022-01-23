@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://src/game/hud/stamina.gd" type="Script" id=1]
-[ext_resource path="res://src/game/hud/Artifact.gd" type="Script" id=2]
-[ext_resource path="res://textures/pixil-frame-0 (2).png" type="Texture" id=3]
+[ext_resource path="res://textures/DancingScript-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/Pause.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 112
+font_data = ExtResource( 1 )
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -11,14 +13,13 @@
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 20.0
-margin_top = -557.0
+margin_top = -590.0
 margin_right = 206.0
-margin_bottom = -527.0
+margin_bottom = -560.0
 step = 1.0
 value = 100.0
 rounded = true
 percent_visible = false
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -37,75 +38,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -226.0
-margin_top = -590.0
-margin_bottom = -576.0
-text = "Press \"N\" to enter debugging mode"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Artifact" type="ProgressBar" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = -590.0
-margin_right = 206.0
-margin_bottom = -560.0
-step = 1.0
-value = 100.0
-rounded = true
-percent_visible = false
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Artifact"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -29.5
-margin_top = -7.0
-margin_right = 29.5
-margin_bottom = 7.0
-text = "ARTIFACT"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="Artifact"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 99.0
-margin_top = -7.0
-margin_right = 159.0
-margin_bottom = 7.0
-text = "x0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Pause" type="Control" parent="."]
 pause_mode = 2
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_scale = Vector2( 1.23055, 1.0943 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Paused" type="Sprite" parent="Pause"]
+[node name="Paused" type="Label" parent="Pause"]
 visible = false
-position = Vector2( 415, 254 )
-scale = Vector2( 10, 10 )
-texture = ExtResource( 3 )
+anchor_right = 0.813477
+anchor_bottom = 0.908333
+custom_fonts/font = SubResource( 1 )
+text = "Paused"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

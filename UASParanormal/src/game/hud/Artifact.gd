@@ -13,20 +13,10 @@ func _ready():
 	
 	pass # Replace with function body.
 func _process(delta):
-	$Label2.text = "x"+ str(player.artifact_total)
-	if(value==min_value):
-		if(player.artifact_total>0):
-			player.artifact_total-=1
-	if(not player.artifact_ready):
-		if(value==max_value):
-			player._set_artifact_ready(true)
-	if(player.artifact_signal and player.artifact_ready and player.artifact_total>0):
+	if(player.artifact_signal and player.artifact_ready and value>0):
 		_reduce_bar()
-		if(value<=0 and player.artifact_total>0):
-			player._reduce_artifact()
-			if(player.artifact_total>0):
-				value=100
-	
+	if(value<=0):
+		player.artifact_ready = false
 func _reduce_bar():
 	value-=EXH_RATE
 # Called every frame. 'delta' is the elapsed time since the previous frame.

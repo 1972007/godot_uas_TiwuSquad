@@ -1,0 +1,20 @@
+{
+   "0":{
+      "timer":1,
+      "dmg":5,
+      "max_durability":100,
+      "texture_name":"kitab.0001.png"
+   },
+   "1":{
+      "timer":5,
+      "dmg":10,
+      "max_durability":50,
+      "texture_name":"salib.0001.png"
+   },
+   "2":{
+      "timer":3,
+      "dmg":7,
+      "max_durability":75,
+      "texture_name":"tasbih.0001.png"
+   }
+}

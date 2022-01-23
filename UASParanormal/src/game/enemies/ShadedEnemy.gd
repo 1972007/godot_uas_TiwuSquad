@@ -5,24 +5,26 @@ extends "res://src/game/enemies/enemy_generic.gd"
 # var a = 2
 # var b = "text"
 
-onready var alpha=$EnemyModel.material.get_shader_param("alpha")
+onready var alpha=$Sprite.material.get_shader_param("alpha")
 onready var invisible =true
 onready var CLOAK_RATE=0.005
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Timer.start()
-
+	sprite = $Sprite
+	scale_x = -1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(not get_tree().paused):
 		
-		alpha=$EnemyModel.material.get_shader_param("alpha")
+		alpha=$Sprite.material.get_shader_param("alpha")
 		if(invisible==false and alpha<1):
 			alpha+=CLOAK_RATE
 		elif(invisible==true and alpha>0):
 			alpha-=CLOAK_RATE
-		$EnemyModel.material.set_shader_param("alpha",alpha)
+		
+		$Sprite.material.set_shader_param("alpha",alpha)
 
 
 func _on_Timer_timeout():

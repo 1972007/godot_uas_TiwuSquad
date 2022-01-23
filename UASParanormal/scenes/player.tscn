@@ -1,39 +1,93 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://src/game/player/player.gd" type="Script" id=1]
-[ext_resource path="res://textures/player_placeholder.png" type="Texture" id=2]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0017.png" type="Texture" id=2]
 [ext_resource path="res://textures/light.png" type="Texture" id=3]
 [ext_resource path="res://src/game/hud/debug_showhide.gd" type="Script" id=4]
 [ext_resource path="res://src/game/player/camera.gd" type="Script" id=5]
 [ext_resource path="res://src/game/player/death.gd" type="Script" id=6]
 [ext_resource path="res://textures/pixil-frame-0 (2).png" type="Texture" id=7]
-[ext_resource path="res://scenes/player.gdshader" type="Shader" id=8]
-[ext_resource path="res://resources/texture1.png" type="Texture" id=9]
-[ext_resource path="res://resources/hologram_lines.png" type="Texture" id=10]
+[ext_resource path="res://textures/MC/diem_cowo/MC1.0001.png" type="Texture" id=8]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0009.png" type="Texture" id=9]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0010.png" type="Texture" id=10]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0011.png" type="Texture" id=11]
+[ext_resource path="res://textures/MC/diem_cowo/MC1.0002.png" type="Texture" id=12]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0008.png" type="Texture" id=13]
+[ext_resource path="res://textures/MC/diem_cowo/MC1.0004.png" type="Texture" id=14]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0016.png" type="Texture" id=15]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0003.png" type="Texture" id=16]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0002.png" type="Texture" id=17]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0013.png" type="Texture" id=18]
+[ext_resource path="res://textures/MC/diem_cowo/MC1.0003.png" type="Texture" id=19]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0022.png" type="Texture" id=20]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0024.png" type="Texture" id=21]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0023.png" type="Texture" id=22]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0020.png" type="Texture" id=23]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0001.png" type="Texture" id=24]
+[ext_resource path="res://textures/MC/diem_cowo/MC1.0009.png" type="Texture" id=25]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0006.png" type="Texture" id=26]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0007.png" type="Texture" id=27]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0014.png" type="Texture" id=28]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0018.png" type="Texture" id=29]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0012.png" type="Texture" id=30]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0005.png" type="Texture" id=31]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0015.png" type="Texture" id=32]
+[ext_resource path="res://textures/MC/diem_cowo/MC1.0005.png" type="Texture" id=33]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0021.png" type="Texture" id=34]
+[ext_resource path="res://textures/MC/diem_cowo/MC1.0006.png" type="Texture" id=35]
+[ext_resource path="res://textures/MC/diem_cowo/MC1.0008.png" type="Texture" id=36]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0004.png" type="Texture" id=37]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0025.png" type="Texture" id=38]
+[ext_resource path="res://textures/MC/jalan_cowo/MC1.0019.png" type="Texture" id=39]
+[ext_resource path="res://textures/MC/diem_cowo/MC1.0007.png" type="Texture" id=40]
+[ext_resource path="res://scenes/Over.tscn" type="PackedScene" id=41]
 
 [sub_resource type="CircleShape2D" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9, 31.5 )
 
-[sub_resource type="ShaderMaterial" id=5]
-shader = ExtResource( 8 )
-shader_param/noise_speed = 2.0
-shader_param/borderColor = Color( 1, 1, 1, 1 )
-shader_param/texture2 = ExtResource( 9 )
-shader_param/noiseTexture = ExtResource( 10 )
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 10, 32.5 )
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 15.0
+[sub_resource type="Animation" id=4]
+resource_name = "idle"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerModel:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.801 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ), ExtResource( 12 ), ExtResource( 19 ), ExtResource( 14 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 25 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "walk"
+length = 0.24
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerModel:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 24 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 37 ), ExtResource( 31 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 30 ), ExtResource( 18 ), ExtResource( 28 ), ExtResource( 32 ), ExtResource( 15 ), ExtResource( 2 ), ExtResource( 29 ), ExtResource( 39 ), ExtResource( 23 ), ExtResource( 34 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 38 ) ]
+}
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
 [node name="ActivateArtifact" type="Node2D" parent="."]
-
-[node name="effect" type="Sprite" parent="ActivateArtifact"]
-position = Vector2( 1, 5 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 7 )
 
 [node name="ArtifactArea" type="Area2D" parent="ActivateArtifact"]
 
@@ -42,13 +96,17 @@ scale = Vector2( 5, 5 )
 shape = SubResource( 3 )
 disabled = true
 
+[node name="AreaTimer" type="Timer" parent="ActivateArtifact/ArtifactArea"]
+one_shot = true
+
 [node name="PlayerModel" type="Sprite" parent="."]
 light_mask = 0
 position = Vector2( 4.76837e-07, 4.76837e-07 )
-scale = Vector2( 1.25, 1.25 )
-texture = ExtResource( 2 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 0.5 )
 shape = SubResource( 1 )
 
 [node name="FOV" type="Light2D" parent="."]
@@ -70,7 +128,6 @@ script = ExtResource( 5 )
 
 [node name="ColorRect" type="ColorRect" parent="Camera"]
 modulate = Color( 1, 1, 1, 0 )
-material = SubResource( 5 )
 margin_left = -515.0
 margin_top = -297.0
 margin_right = 506.0
@@ -83,15 +140,24 @@ __meta__ = {
 [node name="DeathBox" type="Area2D" parent="."]
 monitorable = false
 script = ExtResource( 6 )
+overScene = ExtResource( 41 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBox"]
-shape = SubResource( 2 )
+position = Vector2( 0, 0.5 )
+shape = SubResource( 6 )
 
 [node name="temp_artifact" type="Sprite" parent="."]
 visible = false
-position = Vector2( 0, -23 )
+position = Vector2( -1, -57 )
+scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+method_call_mode = 1
+anims/idle = SubResource( 4 )
+anims/walk = SubResource( 5 )
 
 [connection signal="body_entered" from="ActivateArtifact/ArtifactArea" to="." method="_on_ArtifactArea_body_entered"]
 [connection signal="body_exited" from="ActivateArtifact/ArtifactArea" to="." method="_on_ArtifactArea_body_exited"]
-[connection signal="body_entered" from="DeathBox" to="DeathBox" method="_on_DeathZone_body_entered"]
+[connection signal="timeout" from="ActivateArtifact/ArtifactArea/AreaTimer" to="." method="_on_AreaTimer_timeout"]
+[connection signal="body_entered" from="DeathBox" to="DeathBox" method="_on_DeathBox_body_entered"]
